@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>POA — Pharmtalk by Andrew Owoko</title>
-<meta name="description" content="POA, Pharmtalk by Andrew Owoko — a weekly podcast on the pharmaceutical industry. Everything pharma, every Friday.">
+<title>Andrew Owoko — Pharmaceutical Professional &amp; Host of POA</title>
+<meta name="description" content="Andrew Owoko is a pharmaceutical sales and business development professional, and host of POA — Pharmtalk by Andrew Owoko, a weekly conversation on the pharma industry.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
@@ -14,6 +14,7 @@
 
 <div class="app-shell">
 
+  <!-- Mobile top bar -->
   <header class="mobile-bar">
     <div class="mobile-id">
       <div class="avatar"><img src="https://placehold.co/200x200/2e7d6b/ffffff?text=AO&font=raleway" alt="Andrew Owoko" onerror="this.remove()">AO</div>
@@ -21,6 +22,7 @@
     </div>
   </header>
 
+  <!-- Sidebar navigation -->
   <aside class="sidebar">
     <div class="sidebar-profile">
       <div class="avatar"><img src="https://placehold.co/200x200/2e7d6b/ffffff?text=AO&font=raleway" alt="Andrew Owoko" onerror="this.remove()">AO</div>
@@ -54,213 +56,136 @@
 
   <div class="main-content">
 
-    <!-- POA Hero -->
-    <section class="poa-hero">
-      <svg class="waveform-bg" viewBox="0 0 1000 140" preserveAspectRatio="none" aria-hidden="true">
-        <g stroke="#2E7D6B" stroke-width="4" stroke-linecap="round">
-          <line x1="20" y1="50" x2="20" y2="90"/><line x1="45" y1="30" x2="45" y2="110"/>
-          <line x1="70" y1="10" x2="70" y2="130"/><line x1="95" y1="40" x2="95" y2="100"/>
-          <line x1="120" y1="20" x2="120" y2="120"/><line x1="145" y1="45" x2="145" y2="95"/>
-          <line x1="170" y1="15" x2="170" y2="125"/><line x1="195" y1="35" x2="195" y2="105"/>
-          <line x1="220" y1="25" x2="220" y2="115"/><line x1="245" y1="50" x2="245" y2="90"/>
-          <line x1="270" y1="10" x2="270" y2="130"/><line x1="295" y1="40" x2="295" y2="100"/>
-          <line x1="320" y1="20" x2="320" y2="120"/><line x1="345" y1="45" x2="345" y2="95"/>
-          <line x1="370" y1="15" x2="370" y2="125"/><line x1="395" y1="35" x2="395" y2="105"/>
-          <line x1="420" y1="25" x2="420" y2="115"/><line x1="445" y1="50" x2="445" y2="90"/>
-          <line x1="470" y1="10" x2="470" y2="130"/><line x1="495" y1="40" x2="495" y2="100"/>
-          <line x1="520" y1="20" x2="520" y2="120"/><line x1="545" y1="45" x2="545" y2="95"/>
-          <line x1="570" y1="15" x2="570" y2="125"/><line x1="595" y1="35" x2="595" y2="105"/>
-          <line x1="620" y1="25" x2="620" y2="115"/><line x1="645" y1="50" x2="645" y2="90"/>
-          <line x1="670" y1="10" x2="670" y2="130"/><line x1="695" y1="40" x2="695" y2="100"/>
-          <line x1="720" y1="20" x2="720" y2="120"/><line x1="745" y1="45" x2="745" y2="95"/>
-          <line x1="770" y1="15" x2="770" y2="125"/><line x1="795" y1="35" x2="795" y2="105"/>
-          <line x1="820" y1="25" x2="820" y2="115"/><line x1="845" y1="50" x2="845" y2="90"/>
-          <line x1="870" y1="10" x2="870" y2="130"/><line x1="895" y1="40" x2="895" y2="100"/>
-          <line x1="920" y1="20" x2="920" y2="120"/><line x1="945" y1="45" x2="945" y2="95"/>
-          <line x1="970" y1="15" x2="970" y2="125"/>
-        </g>
-      </svg>
-      <div class="container reveal in">
-        <div class="mic-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 013 3v8a3 3 0 01-6 0V4a3 3 0 013-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v3M8 22h8"/></svg>
-        </div>
-        <div class="poa-mark">POA</div>
-        <div class="poa-sub">Pharmtalk by Andrew Owoko</div>
-        <div class="poa-tagline">Everything pharma. Every Friday.</div>
-        <a href="#content-hub" class="btn btn-gold">Listen now</a>
-      </div>
-    </section>
-
-    <!-- Articles & Talks -->
-    <section class="content-hub" id="content-hub">
+    <!-- Hero -->
+    <section class="hero">
       <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">More from Andrew</span>
-          <h2>Articles and talks on the pharma industry.</h2>
-        </div>
-
-        <div class="content-tabs" role="tablist" aria-label="Content type">
-          <button class="tab-btn active" data-tab="articles" role="tab" aria-selected="true">Articles</button>
-          <button class="tab-btn" data-tab="talks" role="tab" aria-selected="false">Talks</button>
-          <button class="tab-btn" data-tab="discover" role="tab" aria-selected="false">Discover</button>
-        </div>
-
-        <div class="content-panel" data-panel="articles">
-          <div class="content-grid">
-            <button class="content-card" type="button"
-              data-type="article"
-              data-title="Why Access Beats Price in Emerging Markets"
-              data-desc="A look at how distribution and relationships move more volume than a discount ever will, drawn from a decade of territory work across East Africa."
-              data-link="#">
-              <span>Why Access Beats Price in Emerging Markets</span>
-            </button>
-            <button class="content-card" type="button"
-              data-type="article"
-              data-title="The Rep Who Listens Wins the Territory"
-              data-desc="Why the best pharmaceutical sales conversations start with a question, not a pitch — and how that habit compounds over a career."
-              data-link="#">
-              <span>The Rep Who Listens Wins the Territory</span>
-            </button>
-            <button class="content-card" type="button"
-              data-type="article"
-              data-title="Reading a Formulary Like a Buyer"
-              data-desc="A practical breakdown of what procurement teams actually weigh when a new product comes up for review, and how to prepare for it."
-              data-link="#">
-              <span>Reading a Formulary Like a Buyer</span>
-            </button>
-            <button class="content-card" type="button"
-              data-type="article"
-              data-title="What Regulators Actually Want From Reps"
-              data-desc="Common compliance missteps in the field, and a simple framework for staying well inside the lines without slowing down a launch."
-              data-link="#">
-              <span>What Regulators Actually Want From Reps</span>
-            </button>
-            <button class="content-card" type="button"
-              data-type="article"
-              data-title="Building Trust Before the First Pitch"
-              data-desc="The groundwork that happens months before a product ever comes up in conversation with a healthcare provider."
-              data-link="#">
-              <span>Building Trust Before the First Pitch</span>
-            </button>
-            <button class="content-card" type="button"
-              data-type="article"
-              data-title="The Quiet Skill of Follow-Up"
-              data-desc="Why disciplined, unglamorous follow-up outperforms charisma over a long enough sales cycle — and how to build the habit."
-              data-link="#">
-              <span>The Quiet Skill of Follow-Up</span>
-            </button>
+        <div class="hero-grid">
+          <div class="hero-copy reveal in">
+            <span class="hero-kicker">Pharmaceutical sales &amp; business development</span>
+            <h1 data-typewriter>Andrew Owoko builds <em>trust</em> across the pharmaceutical industry.</h1>
+            <p class="hero-lede">Andrew is a pharmaceutical sales and business development professional with a track record of growing territories, forging lasting partnerships, and translating clinical value into commercial results — and the host of POA, a weekly conversation on everything pharma.</p>
+            <div class="hero-pulse" aria-hidden="true">
+              <svg viewBox="0 0 600 60" preserveAspectRatio="none">
+                <path class="pulse-path" d="M0,30 L110,30 L135,8 L160,52 L185,30 L215,30 L235,16 L255,44 L280,30 L600,30" />
+              </svg>
+            </div>
           </div>
-        </div>
-
-        <div class="content-panel" data-panel="talks" hidden>
-          <div class="content-grid">
-            <button class="content-card" type="button"
-              data-type="video"
-              data-title="Inside a Pharma Sales Call"
-              data-desc="A walkthrough of what a real call with a healthcare provider looks like, from the opening question to the follow-up plan."
-              data-link="https://www.youtube.com">
-              <span>Inside a Pharma Sales Call</span>
-            </button>
-            <button class="content-card" type="button"
-              data-type="video"
-              data-title="Territory Planning, Step by Step"
-              data-desc="How Andrew maps a territory from scratch — prioritizing accounts, setting a call cadence, and tracking what's working."
-              data-link="https://www.youtube.com">
-              <span>Territory Planning, Step by Step</span>
-            </button>
-            <button class="content-card" type="button"
-              data-type="video"
-              data-title="Talking to Skeptical Clinicians"
-              data-desc="A candid conversation on handling pushback from healthcare providers without losing the relationship."
-              data-link="https://www.youtube.com">
-              <span>Talking to Skeptical Clinicians</span>
-            </button>
-            <button class="content-card" type="button"
-              data-type="video"
-              data-title="Launch Week: What Really Happens"
-              data-desc="Behind the scenes of a product launch week — the planning, the surprises, and what Andrew would do differently next time."
-              data-link="https://www.youtube.com">
-              <span>Launch Week: What Really Happens</span>
-            </button>
-            <button class="content-card" type="button"
-              data-type="video"
-              data-title="Objection Handling in the Field"
-              data-desc="Role-played objections and honest responses, recorded live with a guest sales trainer from the pharma industry."
-              data-link="https://www.youtube.com">
-              <span>Objection Handling in the Field</span>
-            </button>
-            <button class="content-card" type="button"
-              data-type="video"
-              data-title="A Year in Pharma Sales"
-              data-desc="Andrew reflects on a full year of territory work — the numbers, the lessons, and what changes heading into next year."
-              data-link="https://www.youtube.com">
-              <span>A Year in Pharma Sales</span>
-            </button>
-          </div>
-        </div>
-
-        <div class="content-panel" data-panel="discover" hidden>
-          <div class="content-grid">
-            <button class="content-card" type="button"
-              data-type="discover"
-              data-title="The Making of Pharmtalk"
-              data-desc="How a weekly conversation about pharmaceutical sales turned into POA — the idea, the first episode, and what's changed since."
-              data-link="#">
-              <span>The Making of Pharmtalk</span>
-            </button>
-            <button class="content-card" type="button"
-              data-type="discover"
-              data-title="Meet the Guests"
-              data-desc="A running list of the clinicians, distributors, and industry leaders who've joined Andrew on the show so far."
-              data-link="#">
-              <span>Meet the Guests</span>
-            </button>
-            <button class="content-card" type="button"
-              data-type="discover"
-              data-title="Behind the Mic"
-              data-desc="A look at how each episode comes together — from topic selection to recording to what gets left on the cutting room floor."
-              data-link="#">
-              <span>Behind the Mic</span>
-            </button>
-            <button class="content-card" type="button"
-              data-type="discover"
-              data-title="Listener Questions, Answered"
-              data-desc="Andrew responds to the questions that come in most often from listeners working in pharmaceutical sales themselves."
-              data-link="#">
-              <span>Listener Questions, Answered</span>
-            </button>
-            <button class="content-card" type="button"
-              data-type="discover"
-              data-title="POA Community Highlights"
-              data-desc="Notable conversations and moments shared by the POA community across LinkedIn and X over the past few months."
-              data-link="#">
-              <span>POA Community Highlights</span>
-            </button>
-            <button class="content-card" type="button"
-              data-type="discover"
-              data-title="What's Next for POA"
-              data-desc="A preview of upcoming topics, guests, and formats Andrew is planning to bring to the show."
-              data-link="#">
-              <span>What's Next for POA</span>
-            </button>
+          <div class="hero-portrait-group reveal in">
+            <div class="hero-portrait">
+              <div class="portrait-frame">
+                <span class="initials">AO</span>
+              </div>
+              <div class="portrait-tag"><span class="dot"></span>Host of POA · Pharmtalk</div>
+            </div>
+            <div class="hero-ctas cta-tablet">
+              <a href="services.html" class="med-pill-btn med-teal">Services</a>
+              <a href="products.html" class="med-pill-btn med-blue">Products</a>
+              <a href="poa.html" class="med-pill-btn med-cream">Listen to Pharmtalk</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Branding -->
+    <div class="hero-lede-mobile">
+      <div class="container">
+        <p>Andrew is a pharmaceutical sales and business development professional with a track record of growing territories, forging lasting partnerships, and translating clinical value into commercial results — and the host of POA, a weekly conversation on everything pharma.</p>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <section class="stats-strip">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat reveal">
+            <span class="stat-num"><span data-counter="9" data-suffix="+">0</span></span>
+            <span class="stat-label">Years in pharmaceutical sales</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat-num"><span data-counter="120" data-suffix="+">0</span></span>
+            <span class="stat-label">Healthcare partners engaged</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat-num"><span data-counter="35" data-suffix="+">0</span></span>
+            <span class="stat-label">Pharmtalk episodes recorded</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat-num"><span data-counter="98" data-suffix="%">0</span></span>
+            <span class="stat-label">Territory targets met, career average</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="reveal">
+            <span class="eyebrow">About Andrew</span>
+            <h2 style="font-size:30px; margin-bottom:20px;">A career built on the pharma sales floor and industry conversations.</h2>
+            <div class="about-body">
+              <p>Andrew Owoko has spent his career at the intersection of pharmaceutical science and commercial strategy — managing territories, opening doors with healthcare providers, and helping products reach the patients who need them.</p>
+              <p>Alongside his sales work, Andrew hosts POA, Pharmtalk by Andrew Owoko, a weekly show where he unpacks industry trends, policy shifts, and the realities of working in pharma with guests from across the field.</p>
+            </div>
+          </div>
+          <div class="reveal">
+            <div class="about-card">
+              <ul class="about-list">
+                <li>
+                  <span class="num">01</span>
+                  <div>
+                    <h4>Pharmaceutical expertise</h4>
+                    <p>Deep working knowledge of therapeutic categories, regulatory context, and market access.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="num">02</span>
+                  <div>
+                    <h4>Sales &amp; business development</h4>
+                    <p>Consistent territory growth through relationship-led, consultative selling.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="num">03</span>
+                  <div>
+                    <h4>Industry knowledge</h4>
+                    <p>Ongoing research and commentary on where the pharmaceutical sector is heading.</p>
+                  </div>
+                </li>
+                <li>
+                  <span class="num">04</span>
+                  <div>
+                    <h4>Professional networking</h4>
+                    <p>A wide network of clinicians, distributors, and industry leaders built over years in the field.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POA preview -->
     <section style="padding-top:0;">
       <div class="container">
-        <div class="brand-panel reveal">
+        <div class="poa-preview reveal">
+          <svg class="waveform" viewBox="0 0 200 200" preserveAspectRatio="none" aria-hidden="true">
+            <g stroke="#2E7D6B" stroke-width="3" stroke-linecap="round">
+              <line x1="10" y1="80" x2="10" y2="120"/><line x1="25" y1="60" x2="25" y2="140"/>
+              <line x1="40" y1="40" x2="40" y2="160"/><line x1="55" y1="70" x2="55" y2="130"/>
+              <line x1="70" y1="30" x2="70" y2="170"/><line x1="85" y1="55" x2="85" y2="145"/>
+              <line x1="100" y1="45" x2="100" y2="155"/><line x1="115" y1="65" x2="115" y2="135"/>
+              <line x1="130" y1="35" x2="130" y2="165"/><line x1="145" y1="75" x2="145" y2="125"/>
+              <line x1="160" y1="50" x2="160" y2="150"/><line x1="175" y1="60" x2="175" y2="140"/>
+            </g>
+          </svg>
           <div>
-            <span class="eyebrow">The POA identity</span>
-            <h3>A brand built for conversation.</h3>
-            <p>POA pairs a confident, editorial mark with a pharmaceutical-blue-and-gold waveform identity — built to travel across the website, podcast artwork, and social channels without losing its voice.</p>
+            <h3>POA — Pharmtalk by Andrew Owoko</h3>
+            <p>Everything pharma, every Friday. A weekly show on the industry Andrew has built his career in.</p>
           </div>
-          <div class="brand-mark-block">
-            <div class="poa-mark">POA</div>
-            <div class="poa-sub">Pharmtalk by Andrew Owoko</div>
-          </div>
+          <a href="poa.html" class="btn btn-gold">Listen now</a>
         </div>
       </div>
     </section>
@@ -268,6 +193,7 @@
   </div>
 </div>
 
+<!-- Footer -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -375,24 +301,6 @@
           </a>
         </div>
       </div>
-    </div>
-  </div>
-</div>
-
-<!-- Article / Talk modal -->
-<div class="content-modal-backdrop" data-content-backdrop>
-  <div class="content-modal" role="dialog" aria-modal="true" aria-label="Content details">
-    <button class="content-modal-close" data-content-close aria-label="Close">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-    </button>
-    <div class="content-modal-media">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 013 3v8a3 3 0 01-6 0V4a3 3 0 013-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2M12 19v3M8 22h8"/></svg>
-    </div>
-    <div class="content-modal-body">
-      <span class="content-modal-tag" data-content-tag></span>
-      <h3 data-content-title></h3>
-      <p data-content-desc></p>
-      <a class="btn btn-primary" data-content-link href="#" target="_blank" rel="noopener"><span data-content-cta></span></a>
     </div>
   </div>
 </div>
