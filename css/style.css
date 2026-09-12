@@ -1582,6 +1582,6 @@ section{ padding: 96px 0; }
   .footer-bottom{ flex-direction: column; align-items: flex-start; }
   .content-tabs{ padding: 3px; gap: 2px; }
   .tab-btn{ padding: 8px 14px; font-size: 12.5px; }
-  .content-grid{ grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; gap: 16px; }
-  .content-card{ padding: 22px; font-size: 18px; }
+  .content-grid{ grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .content-card{ padding: 14px; font-size: 13.5px; }
 }

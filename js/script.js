@@ -17,6 +17,30 @@
     initProductModal();
     initServiceModal();
     initMobileTypewriter();
+    initGuard();
+  }
+
+  /* ---------- Deter right-click and dev-tools shortcuts ----------
+     Note: this only discourages casual copying; it cannot fully
+     block anyone determined (disabling JS, browser menus, mobile
+     "view source", etc. all still work), and it also blocks the
+     right-click / keyboard shortcuts some users and screen readers
+     rely on. */
+  function initGuard() {
+    document.addEventListener("contextmenu", function (e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener("keydown", function (e) {
+      var key = e.key ? e.key.toUpperCase() : "";
+      var blockDevTools =
+        key === "F12" ||
+        ((e.ctrlKey || e.metaKey) && e.shiftKey && (key === "I" || key === "J" || key === "C")) ||
+        ((e.ctrlKey || e.metaKey) && key === "U");
+      if (blockDevTools) {
+        e.preventDefault();
+      }
+    });
   }
 
   /* ---------- Mobile-only typewriter effect for the hero heading ---------- */
