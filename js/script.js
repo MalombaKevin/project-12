@@ -14,6 +14,8 @@
     initPodcastPlayers();
     initChatWidget();
     initContentHub();
+    initProductModal();
+    initServiceModal();
   }
 
   /* ---------- Highlight active nav link by filename (sidebar + bottom nav) ---------- */
@@ -237,15 +239,129 @@
     });
   }
 
+  /* ---------- Service "View More" modal ---------- */
+  function initServiceModal() {
+    var moreBtns = document.querySelectorAll("[data-service-more]");
+    var backdrop = document.querySelector("[data-service-backdrop]");
+    if (!moreBtns.length || !backdrop) return;
+
+    var closeBtn = document.querySelector("[data-service-close]");
+    var nameEl = document.querySelector("[data-service-name]");
+    var descEl = document.querySelector("[data-service-desc]");
+    var contactBtn = document.querySelector("[data-service-contact]");
+
+    function open(card) {
+      nameEl.textContent = card.getAttribute("data-name");
+      descEl.textContent = card.getAttribute("data-desc");
+      backdrop.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+    function close() {
+      backdrop.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    var cards = document.querySelectorAll("[data-service-card]");
+    cards.forEach(function (card) {
+      card.addEventListener("click", function () {
+        open(card);
+      });
+      var cardContactBtn = card.querySelector(".service-btn-contact");
+      if (cardContactBtn) {
+        cardContactBtn.addEventListener("click", function (e) {
+          e.stopPropagation();
+        });
+      }
+    });
+
+    moreBtns.forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var card = btn.closest("[data-service-card]");
+        if (card) open(card);
+      });
+    });
+    if (closeBtn) closeBtn.addEventListener("click", close);
+    backdrop.addEventListener("click", function (e) {
+      if (e.target === backdrop) close();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") close();
+    });
+    if (contactBtn) {
+      contactBtn.addEventListener("click", function () {
+        close();
+        var chatBubble = document.querySelector(".chat-bubble");
+        if (chatBubble) chatBubble.click();
+      });
+    }
+  }
+
+  /* ---------- Product "View More" modal ---------- */
+  function initProductModal() {
+    var cards = document.querySelectorAll("[data-product-card]");
+    var backdrop = document.querySelector("[data-product-backdrop]");
+    if (!cards.length || !backdrop) return;
+
+    var closeBtn = document.querySelector("[data-product-close]");
+    var nameEl = document.querySelector("[data-product-name]");
+    var descEl = document.querySelector("[data-product-desc]");
+    var catEl = document.querySelector("[data-product-cat]");
+    var emailEl = document.querySelector("[data-product-email]");
+    var waEl = document.querySelector("[data-product-whatsapp]");
+
+    var EMAIL = "malwike.tech@gmail.com";
+    var WHATSAPP_NUMBER = "254715325834";
+
+    function open(card) {
+      var name = card.getAttribute("data-name");
+      var desc = card.getAttribute("data-desc");
+      var cat = card.getAttribute("data-cat-label");
+      var message = 'I would like to order "' + name + '"';
+
+      nameEl.textContent = name;
+      descEl.textContent = desc;
+      catEl.textContent = cat;
+      emailEl.setAttribute(
+        "href",
+        "mailto:" + EMAIL + "?subject=" + encodeURIComponent("Product enquiry — " + name) + "&body=" + encodeURIComponent(message)
+      );
+      waEl.setAttribute(
+        "href",
+        "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message)
+      );
+
+      backdrop.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+    function close() {
+      backdrop.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+
+    cards.forEach(function (card) {
+      card.addEventListener("click", function () {
+        open(card);
+      });
+    });
+    if (closeBtn) closeBtn.addEventListener("click", close);
+    backdrop.addEventListener("click", function (e) {
+      if (e.target === backdrop) close();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") close();
+    });
+  }
+
   /* ---------- Chat bubble / contact modal ---------- */
   function initChatWidget() {
-    var bubble = document.querySelector("[data-chat-open]");
+    var bubbles = document.querySelectorAll("[data-chat-open]");
     var backdrop = document.querySelector("[data-chat-backdrop]");
     var closeBtn = document.querySelector("[data-chat-close]");
     var typing = document.querySelector("[data-chat-typing]");
     var message = document.querySelector("[data-chat-message]");
     var actions = document.querySelector("[data-chat-actions]");
-    if (!bubble || !backdrop) return;
+    if (!bubbles.length || !backdrop) return;
 
     var played = false;
 
@@ -272,13 +388,28 @@
       document.body.style.overflow = "";
     }
 
-    bubble.addEventListener("click", open);
+    bubbles.forEach(function (bubble) {
+      bubble.addEventListener("click", open);
+    });
     if (closeBtn) closeBtn.addEventListener("click", close);
     backdrop.addEventListener("click", function (e) {
       if (e.target === backdrop) close();
     });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") close();
+    });
+
+    var chatTabs = document.querySelectorAll(".chat-tab-btn");
+    var chatPanels = document.querySelectorAll(".chat-tab-panel");
+    chatTabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        chatTabs.forEach(function (t) { t.classList.remove("active"); });
+        tab.classList.add("active");
+        var target = tab.getAttribute("data-chat-tab");
+        chatPanels.forEach(function (panel) {
+          panel.hidden = panel.getAttribute("data-chat-panel") !== target;
+        });
+      });
     });
   }
 
