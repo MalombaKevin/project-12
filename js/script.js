@@ -16,6 +16,7 @@
     initContentHub();
     initProductModal();
     initServiceModal();
+    initStoryViewer();
     initMobileTypewriter();
     initGuard();
   }
@@ -417,6 +418,80 @@
     });
     document.addEventListener("keydown", function (e) {
       if (e.key === "Escape") close();
+    });
+  }
+
+  /* ---------- Achievement gallery "story" viewer ---------- */
+  function initStoryViewer() {
+    var triggers = document.querySelectorAll("[data-story-trigger]");
+    var backdrop = document.querySelector("[data-story-backdrop]");
+    if (!triggers.length || !backdrop) return;
+
+    var imageEl = document.querySelector("[data-story-image]");
+    var captionEl = document.querySelector("[data-story-caption]");
+    var progressEl = document.querySelector("[data-story-progress]");
+    var closeBtn = document.querySelector("[data-story-close]");
+    var prevZone = document.querySelector("[data-story-prev]");
+    var nextZone = document.querySelector("[data-story-next]");
+
+    var items = Array.prototype.map.call(triggers, function (t) {
+      return { image: t.getAttribute("data-image"), label: t.getAttribute("data-label") };
+    });
+    var current = 0;
+
+    progressEl.innerHTML = items.map(function () { return "<span></span>"; }).join("");
+    var segments = progressEl.querySelectorAll("span");
+
+    function render() {
+      var item = items[current];
+      imageEl.setAttribute("src", item.image);
+      imageEl.setAttribute("alt", item.label);
+      captionEl.textContent = item.label;
+      segments.forEach(function (seg, i) {
+        seg.classList.toggle("done", i <= current);
+      });
+    }
+    function open(index) {
+      current = index;
+      render();
+      backdrop.classList.add("open");
+      document.body.style.overflow = "hidden";
+    }
+    function close() {
+      backdrop.classList.remove("open");
+      document.body.style.overflow = "";
+    }
+    function next() {
+      if (current < items.length - 1) {
+        current += 1;
+        render();
+      } else {
+        close();
+      }
+    }
+    function prev() {
+      if (current > 0) {
+        current -= 1;
+        render();
+      }
+    }
+
+    triggers.forEach(function (trigger, i) {
+      trigger.addEventListener("click", function () {
+        open(i);
+      });
+    });
+    if (closeBtn) closeBtn.addEventListener("click", close);
+    if (nextZone) nextZone.addEventListener("click", next);
+    if (prevZone) prevZone.addEventListener("click", prev);
+    backdrop.addEventListener("click", function (e) {
+      if (e.target === backdrop) close();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (!backdrop.classList.contains("open")) return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft") prev();
     });
   }
 
